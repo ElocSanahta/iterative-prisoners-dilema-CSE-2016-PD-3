@@ -1,3 +1,4 @@
+
 from __future__ import print_function
 
 ''' 
@@ -297,42 +298,30 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
 
 
 
-
-    ######
+ 
+    ######Cole and Alex
+    
     ######        
     #
     elif player == 8:
         if getting_team_name:
             #if there was a previous round just like 
-            return 'loyal vengeful with permanent second impression'
+            return 'TR-8R-4LYFE (Team 8)'
         else:
             # use history, opponent_history, score, opponent_score
-            # to compute your strategy      
-            if len(opponent_history)==0: #It's the first round: collude
+            # to compute your strategy
+            if player == 10:
                 return 'c'
-            else:
-                # if there was a previous round just like the last one,
-                # do whatever they did in the round that followed it
-                recent_round_opponent = opponent_history[-1]
-                recent_round_me = history[-1]
-                            
-                #go through rounds before that one
-                for round in range(len(history)-1):
-                    prior_round_opponent = opponent_history[round]
-                    prior_round_me = history[round]
-                    #if one matches
-                    if (prior_round_me == recent_round_me) and \
-                            (prior_round_opponent == recent_round_opponent):
-                        return opponent_history[round]
-                # no match found
-                if history[-1]=='c' and opponent_history[-1]=='b':
-                    return 'b' # betray is they were severely punished last time
-                else:
-                    return 'c' #otherwise collude
-
-
-
-
+            if player == 7:
+                return 'c' 
+            if history == 'c':
+                    return 'b' 
+            if opponent_history == 'c':
+                    return 'b'
+            if player == 9:
+               return 'c'
+            if player == 4:
+                return 'c'   
 
 
 
